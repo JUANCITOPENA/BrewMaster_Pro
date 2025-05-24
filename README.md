@@ -107,23 +107,7 @@
 *   **Internacionalización (i18n) Completa:** No solo monedas, sino todo el texto de la UI.
 *   **Accesibilidad (a11y):** Mejorar el cumplimiento de las directrices WCAG.
 *   **Refactorización a un Framework Moderno:** Migrar a React, Vue, o Angular para una gestión de estado y componentización más robusta.
-
 ---
-
-## 💡 ¿Qué se puede aprender de este proyecto?
-
-*   **Manipulación Avanzada del DOM:** Creación, modificación y eliminación dinámica de elementos HTML.
-*   **Gestión de Estado del Lado del Cliente:** Manejo de datos como productos, carrito, favoritos, y preferencias del usuario (tamaño, moneda).
-*   **Uso de `localStorage`:** Para persistencia de datos entre sesiones.
-*   **Componentes Interactivos:** Creación de carruseles, acordeones, modales, y selectores personalizados.
-*   **Event Handling:** Manejo de clics, cambios, gestos táctiles, etc.
-*   **Programación Asíncrona (Básica):** Uso de `setTimeout` para simular demoras y `async/await` para la generación de PDF.
-*   **Integración de Librerías Externas:** Cómo incluir y utilizar librerías de terceros como Bootstrap, jsPDF, y html2canvas.
-*   **Diseño Responsivo y Mobile-First:** Técnicas CSS para adaptar la interfaz a diferentes dispositivos.
-*   **Animaciones CSS:** Para mejorar la experiencia visual y las transiciones.
-*   **Generación de Documentos (PDF):** Implementación de una funcionalidad compleja como la exportación a PDF desde el navegador.
-*   **Estructura de una Aplicación de una Sola Página (SPA) Simple:** Aunque no usa un framework SPA formal, la lógica organiza la interfaz en "vistas" (slides del carrusel) y modales.
-*   **Buenas Prácticas (Simuladas):** Aunque es una simulación, toca conceptos como la separación de datos (el array `coffeeProducts`), lógica de UI, y utilidades.
 
 ## 🖼️ Screenshots
 
