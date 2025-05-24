@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrewMaster Pro ☕</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Splash Screen -->
+    <div id="splash-screen">
+        <img src="img/IMG0.png" alt="BrewMaster Pro Logo" id="splash-logo"> <!-- TU LOGO -->
+        <h2 id="splash-slogan">El Arte del Café, en tus Manos.</h2>
+        <div class="spinner"></div>
+    </div>
+
+    <div class="container-fluid p-0" id="app-root" style="display: none;">
+        <div class="app-container">
+            <!-- Header -->
+            <div class="app-header">
+                <div class="header-content">
+                     <h1><img src="img/IMG0.png" alt="Logo" class="header-logo-icon"> BrewMaster Pro</h1> <!-- TU LOGO -->
+                    <p>Tu Experiencia de Café Premium</p>
+                </div>
+                <div class="cart-icon-container" id="cartIconContainer" title="Ver Carrito">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-badge" id="cartBadge">0</span>
+                </div>
+            </div>
+
+            <!-- Progress Indicator (los data-slide-id deben coincidir con los IDs en coffeeProducts) -->
+            <div class="progress-indicator">
+                <!-- Dots generados por JS -->
+            </div>
+
+            <!-- Carousel Container (El contenido de los slides se modificará/reemplazará por JS) -->
+            <div class="carousel-container">
+                <!-- Slide 1: Básico -->
+                <div class="carousel-slide active fade-in-up" data-product-id="mocha-basic">
+                    <div class="slide-content-wrapper">
+                        <div class="coffee-image-wrapper"><img src="" alt="Cappuccino Mocha" class="coffee-image"></div>
+                        <h2 class="coffee-title">Cappuccino Mocha ☕</h2>
+                        <p class="coffee-subtitle">Delicioso y cremoso</p>
+                        <div class="price-tag"></div>
+                        <div class="text-center action-buttons-bottom">
+                            <button class="btn btn-primary-custom add-to-cart-btn" data-product-id="mocha-basic">
+                                <i class="fas fa-cart-plus"></i> Agregar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 2: Con descripción y Acordeón -->
+                <div class="carousel-slide" data-product-id="mocha-premium">
+                    <div class="slide-content-wrapper">
+                        <button class="favorite-btn" data-product-id="mocha-premium"><i class="far fa-heart"></i></button>
+                        <div class="coffee-image-wrapper"><img src="" alt="Cappuccino Mocha Premium" class="coffee-image"></div>
+                        <h2 class="coffee-title">Cappuccino Mocha Premium ☕</h2>
+                        <p class="coffee-subtitle">Una perfecta combinación...</p>
+                        <div class="price-tag"></div>
+                        <div class="rating"><div class="stars"></div> <small class="text-muted"></small></div>
+                        <div class="accordion">
+                            <div class="accordion-item">
+                                <button class="accordion-header"><span><i class="fas fa-info-circle"></i> Detalles</span><i class="fas fa-chevron-down accordion-icon"></i></button>
+                                <div class="accordion-content"><ul class="feature-list"></ul></div>
+                            </div>
+                        </div>
+                        <div class="action-buttons action-buttons-bottom">
+                            <button class="btn btn-outline-custom favorite-action-btn" data-product-id="mocha-premium"><i class="far fa-heart"></i> <span>Me Gusta</span></button>
+                            <button class="btn btn-primary-custom add-to-cart-btn" data-product-id="mocha-premium"><i class="fas fa-shopping-cart"></i> Pedir</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 3: Más opciones y pago -->
+                <div class="carousel-slide" data-product-id="mocha-deluxe">
+                    <div class="slide-content-wrapper">
+                        <button class="favorite-btn" data-product-id="mocha-deluxe"><i class="far fa-heart"></i></button>
+                        <div class="coffee-image-wrapper"><img src="" alt="Cappuccino Mocha Deluxe" class="coffee-image"></div>
+                        <h2 class="coffee-title">Cappuccino Mocha Deluxe ☕</h2>
+                        <p class="coffee-subtitle"></p>
+                        <h6><i class="fas fa-ruler-combined"></i> Tamaño:</h6>
+                        <div class="size-options" data-product-id="mocha-deluxe"></div>
+                        <div class="accordion">
+                             <div class="accordion-item">
+                                <button class="accordion-header"><span><i class="fas fa-leaf"></i> Ingredientes</span><i class="fas fa-chevron-down accordion-icon"></i></button>
+                                <div class="accordion-content"><div class="ingredients-grid"></div></div>
+                            </div>
+                        </div>
+                        <h6><i class="fas fa-credit-card"></i> Pago:</h6>
+                        <div class="payment-methods"></div>
+                        <div class="price-tag product-total-price" data-product-id="mocha-deluxe"></div>
+                        <div class="action-buttons action-buttons-bottom">
+                            <button class="btn btn-outline-custom" id="previewOrderBtnDeluxe"><i class="fas fa-eye"></i> Previa Pedido</button>
+                            <button class="btn btn-primary-custom add-to-cart-btn" data-product-id="mocha-deluxe"><i class="fas fa-shopping-bag"></i> Comprar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 4: Versión completa -->
+                <div class="carousel-slide" data-product-id="mocha-supreme">
+                     <div class="slide-content-wrapper">
+                        <button class="favorite-btn" data-product-id="mocha-supreme"><i class="far fa-heart"></i></button>
+                        <div class="coffee-image-wrapper"><img src="" alt="Cappuccino Mocha Supreme" class="coffee-image"></div>
+                        <h2 class="coffee-title">Cappuccino Mocha Supreme ☕</h2>
+                        <p class="coffee-subtitle"></p>
+                        <div class="rating"><div class="stars"></div><small class="text-muted"></small></div>
+                        <h6><i class="fas fa-ruler-combined"></i> Tamaño:</h6>
+                        <div class="size-options" data-product-id="mocha-supreme"></div>
+                        <h6><i class="fas fa-sort-amount-up"></i> Cantidad:</h6>
+                        <div class="quantity-selector">
+                            <button class="qty-btn minus" data-product-id="mocha-supreme"><i class="fas fa-minus"></i></button>
+                            <span class="qty-display" id="globalQuantityDisplay">1</span>
+                            <button class="qty-btn plus" data-product-id="mocha-supreme"><i class="fas fa-plus"></i></button>
+                        </div>
+                        <h6><i class="fas fa-money-bill-wave"></i> Moneda:</h6>
+                        <div class="currency-selector"></div>
+                        <div class="price-tag product-total-price" data-product-id="mocha-supreme"></div>
+                        <div class="accordion">
+                            <div class="accordion-item">
+                                <button class="accordion-header"><span><i class="fas fa-cookie-bite"></i> Ingredientes Premium</span><i class="fas fa-chevron-down accordion-icon"></i></button>
+                                <div class="accordion-content"><div class="ingredients-grid"></div></div>
+                            </div>
+                        </div>
+                        <div class="action-buttons action-buttons-bottom">
+                            <button class="btn btn-outline-custom favorite-action-btn" data-product-id="mocha-supreme"><i class="far fa-heart"></i> <span>Añadir Fav.</span></button>
+                            <button class="btn btn-primary-custom add-to-cart-btn" data-product-id="mocha-supreme"><i class="fas fa-rocket"></i> Ordenar Ya</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div id="toast-container"></div>
+
+    <!-- Modal Carrito -->
+    <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable modal-lg">
+            <div class="modal-content">
+                <div class="modal-header"><h5 class="modal-title" id="cartModalLabel"><i class="fas fa-shopping-cart"></i> Tu Carrito</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                <div class="modal-body" id="cartModalBody"><p class="text-center p-4">Tu carrito está vacío.</p></div>
+                <div class="modal-footer justify-content-between">
+                    <div id="cartTotalContainer" class="text-start" style="display: none;"><strong>Total: <span id="cartModalTotal"></span></strong></div>
+                    <div><button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Seguir Comprando</button><button type="button" class="btn btn-primary-custom" id="checkoutButton" disabled><i class="fas fa-credit-card"></i> Proceder al Pago</button></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal Pasarela de Pago -->
+    <div class="modal fade" id="paymentGatewayModal" tabindex="-1" aria-labelledby="paymentGatewayModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="paymentGatewayModalLabel"><i class="fas fa-lock"></i> Pasarela de Pago Segura (Simulada)</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="paymentOrderSummary" class="mb-4">
+                        <h6>Resumen del Pedido:</h6>
+                        <ul id="paymentItemList" class="list-group list-group-flush mb-2"></ul>
+                        <p class="text-end fs-5"><strong>Total a Pagar: <span id="paymentTotalAmount"></span></strong></p>
+                    </div>
+                    <hr>
+                    <h6>Información de Pago (Simulada):</h6>
+                    <form id="paymentForm" novalidate>
+                        <div class="mb-3">
+                            <label for="cardName" class="form-label">Nombre en la Tarjeta</label>
+                            <input type="text" class="form-control" id="cardName" value="Juan Pérez Ejemplo" required>
+                            <div class="invalid-feedback">Por favor, ingresa el nombre en la tarjeta.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="cardNumber" class="form-label">Número de Tarjeta</label>
+                            <input type="text" class="form-control" id="cardNumber" placeholder="XXXX XXXX XXXX XXXX" value="4242424242424242" pattern="\d{16}" maxlength="16" required>
+                             <div class="invalid-feedback">Ingresa un número de tarjeta válido (16 dígitos).</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-7 mb-3">
+                                <label for="cardExpiry" class="form-label">Fecha de Expiración (MM/AA)</label>
+                                <input type="text" class="form-control" id="cardExpiry" placeholder="MM/AA" value="12/25" pattern="(0[1-9]|1[0-2])\/\d{2}" maxlength="5" required>
+                                <div class="invalid-feedback">Ingresa una fecha válida (MM/AA). Formato: 02/28</div>
+                            </div>
+                            <div class="col-md-5 mb-3">
+                                <label for="cardCVC" class="form-label">CVC/CVV</label>
+                                <input type="text" class="form-control" id="cardCVC" placeholder="XXX" value="123" pattern="\d{3,4}" maxlength="4" required>
+                                <div class="invalid-feedback">Ingresa un CVC válido (3 o 4 dígitos).</div>
+                            </div>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="saveCardInfo" checked>
+                            <label class="form-check-label" for="saveCardInfo">Guardar información (simulado)</label>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-success" id="confirmPaymentButton"><i class="fas fa-check-circle"></i> Confirmar Pago</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Factura -->
+    <div class="modal fade" id="invoiceModal" tabindex="-1" aria-labelledby="invoiceModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-scrollable"> <!-- modal-xl para más espacio -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="invoiceModalLabel"><i class="fas fa-file-invoice-dollar"></i> Factura de Compra</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="invoiceModalBody"> <!-- Contenedor para el scroll si es necesario -->
+                    <div id="invoiceContentForPdf">
+                        <!-- El contenido de la factura se generará aquí por JS -->
+                    </div>
+                </div>
+                <div class="modal-footer justify-content-center"> <!-- Botones centrados -->
+                    <button type="button" class="btn btn-info text-white" id="printInvoiceButton"><i class="fas fa-print"></i> Imprimir Factura</button>
+                    <button type="button" class="btn btn-success" id="downloadPdfButton"><i class="fas fa-file-pdf"></i> Descargar PDF</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
